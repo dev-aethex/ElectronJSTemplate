@@ -2,4 +2,4 @@
 ###### A project by Aethex
 
 # Licence
-MIT
+MIT Licence
