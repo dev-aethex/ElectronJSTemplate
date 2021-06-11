@@ -66,7 +66,9 @@ body {
     font-size: 13px;
 }
 .ELECTRON_frame .left {
-    display: inline;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: 10px;
     margin-right: auto;
     color: #ffffff;
@@ -74,6 +76,11 @@ body {
 }
 .ELECTRON_frame .left span {
     margin-left: 20px;
+}
+.ELECTRON_frame .left img {
+    margin-left: 20px;
+    width: 15px;
+    height: 15px;
 }
 .ELECTRON_content {
     width: 100vw;

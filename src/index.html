@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Untitled Project</title>
-        <link rel="stylesheet" href="index.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta charset="UTF-8" />
+        <title>ElectronJS Template Application</title>
+        <link rel="stylesheet" href="index.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     </head>
     <body>
         <div class="ELECTRON_frame">
             <div class="left">
+                <img src="icon.ico" draggable="false" />
                 <span>
                     <script>
                         document.write(document.title);
@@ -25,7 +26,7 @@
                 <span class="md-icon">close</span>
             </button>
         </div>
-        <iframe class="ELECTRON_content" src="http://localhost"></iframe>
+        <iframe class="ELECTRON_content" src="file:///C:\Users\XFaon\Downloads\nginx-1.21.0\nginx-1.21.0\html\index.html"></iframe>
         <script>
             const ipc = require("electron").ipcRenderer;
             const webFrame = require("electron").webFrame;
