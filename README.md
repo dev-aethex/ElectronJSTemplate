@@ -23,7 +23,7 @@ npm install
 ```
 
 **Don't have Git installed?**
- - Install git from the official website. [Download](https://git-scm.com/downloads)
+ - Install git from the official website.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Download](https://git-scm.com/downloads)
  - Download the project zip and extract to project location. [Download](https://github.com/dev-aethex/ElectronJSTemplate/archive/refs/heads/main.zip)
 
 ## Run the project
