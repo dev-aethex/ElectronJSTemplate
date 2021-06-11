@@ -1,0 +1,83 @@
+.md-icon {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #1d252c;
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+
+.ELECTRON_frame {
+    width: 100vw;
+    height: 30px;
+    background: #171d23;
+    display: flex;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+}
+.ELECTRON_frame button {
+    border: none;
+    height: 30px;
+    padding: 0px 20px;
+    color: #fff;
+    background: #00000000;
+    transition-duration: 100ms;
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    opacity: 60%;
+}
+
+.ELECTRON_frame button:hover {
+    background: #1d252c;
+    opacity: 100%;
+}
+
+.ELECTRON_frame button.close:hover {
+    background: #ff5555;
+    opacity: 100%;
+}
+
+.ELECTRON_frame button .md-icon {
+    font-size: 13px;
+}
+
+.ELECTRON_frame .left {
+    display: inline;
+    font-size: 10px;
+    margin-right: auto;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.ELECTRON_frame .left span {
+    margin-left: 20px;
+}
+
+.ELECTRON_content {
+    width: 100vw;
+    border: none;
+    height: calc(100vh - 30px);
+    background: #fff;
+}

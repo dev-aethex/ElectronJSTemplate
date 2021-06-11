@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitled Project</title>
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div class="ELECTRON_frame">
+            <div class="left">
+                <span>
+                    <script>
+                        document.write(document.title);
+                    </script>
+                </span>
+            </div>
+            <button class="minimize">
+                <span class="md-icon">remove</span>
+            </button>
+            <button class="size">
+                <span class="md-icon">check_box_outline_blank</span>
+            </button>
+            <button class="close">
+                <span class="md-icon">close</span>
+            </button>
+        </div>
+        <iframe class="ELECTRON_content" src="http://localhost"></iframe>
+        <script>
+            const ipc = require("electron").ipcRenderer;
+            const webFrame = require("electron").webFrame;
+
+            webFrame.setZoomFactor(1);
+
+            document.querySelector(".ELECTRON_frame .minimize").addEventListener("click", () => {
+                ipc.send("ELECTRON_frame_minimize");
+            });
+
+            document.querySelector(".ELECTRON_frame .close").addEventListener("click", () => {
+                ipc.send("ELECTRON_frame_close");
+            });
+
+            document.querySelector(".ELECTRON_frame .size").addEventListener("click", () => {
+                ipc.send("ELECTRON_frame_fullScreen");
+            });
+        </script>
+    </body>
+</html>
