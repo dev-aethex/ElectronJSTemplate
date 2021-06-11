@@ -39,7 +39,7 @@ body {
     border: none;
     height: 30px;
     padding: 0px 20px;
-    color: #fff;
+    color: #ffffff;
     background: #00000000;
     transition-duration: 100ms;
     -webkit-app-region: no-drag;
@@ -50,7 +50,7 @@ body {
     background: #1d252c;
     opacity: 100%;
 }
-.ELECTRON_frame button:active {
+.ELECTRON_frame button:hover:active {
     background: #1d252c;
     opacity: 60%;
 }
@@ -58,7 +58,7 @@ body {
     background: #ff5555;
     opacity: 100%;
 }
-.ELECTRON_frame button.close:active {
+.ELECTRON_frame button.close:hover:active {
     background: #ff5555;
     opacity: 60%;
 }
@@ -69,7 +69,7 @@ body {
     display: inline;
     font-size: 10px;
     margin-right: auto;
-    color: #fff;
+    color: #ffffff;
     font-family: sans-serif;
 }
 .ELECTRON_frame .left span {
@@ -80,4 +80,5 @@ body {
     border: none;
     height: calc(100vh - 30px);
     background: #1d252c;
+    color: #ffffff;
 }
