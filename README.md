@@ -8,6 +8,7 @@ Hey, welcome to our repository! This is a simple ElectronJS based template with 
 
 ###### Table to contents
  - [Installation](#installation)
+ - [Run the project](#run-the-project)
 
 ## Installation
 To install and use this framework, navigate to a folder with all of your projects, then simply run this command.
