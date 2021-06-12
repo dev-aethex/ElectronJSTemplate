@@ -86,6 +86,6 @@ body {
     width: 100vw;
     border: none;
     height: calc(100vh - 30px);
-    background: #1d252c;
-    color: #ffffff;
+    background: #fff;
+    color: #000;
 }

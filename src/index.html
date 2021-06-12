@@ -26,10 +26,21 @@
                 <span class="md-icon">close</span>
             </button>
         </div>
-        <iframe class="ELECTRON_content" src="file:///C:\Users\XFaon\Downloads\nginx-1.21.0\nginx-1.21.0\html\index.html"></iframe>
+        <iframe src="about:blank" class="ELECTRON_content"></iframe>
         <script>
             const ipc = require("electron").ipcRenderer;
             const webFrame = require("electron").webFrame;
+
+            // Load content
+            ipc.on("ELECTRON_contentLoaded", (event, data) => {
+                // Content window
+                var contentWindow = document.querySelector(".ELECTRON_content");
+
+                // Write to window
+                contentWindow.contentDocument.write(data);
+            });
+
+            ipc.send("ELECTRON_contentLoad");
 
             webFrame.setZoomFactor(1);
 
