@@ -1,0 +1,8 @@
+{
+    "resizable": true,
+    "width": 1500,
+    "height": 800,
+    "minHeight": 300,
+    "minWidth": 500,
+    "icon": "src/icon.ico"
+}
