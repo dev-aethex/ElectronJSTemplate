@@ -1,62 +1,38 @@
-const { app, BrowserWindow, remote } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
-const ipc = require("electron").ipcMain;
 const fileSystem = require("fs");
+var config = require("../config.json");
 
-if (require('electron-squirrel-startup')) { 
-    app.quit();
+class Main {
+    constructor() {
+        app.on("ready", () => {
+            this.buildWindow();
+        });
+
+        app.on("activate", () => {
+            if(BrowserWindow.getAllWindows == 0) {
+                this.buildWindow();
+            }
+        });
+
+        app.on('window-all-closed', () => {
+            if (process.platform !== "darwin") {
+                app.quit();
+            }
+        });
+    }
+    buildWindow() {
+        var window = new BrowserWindow({
+            width: config.width,
+            height: config.height,
+            frame: false,
+            minWidth: config.minWidth,
+            minHeight: config.minHeight,
+            icon: config.icon
+        });
+        window.setResizable(config.resizable);
+        window.loadFile("./src/VueJS/dist/index.html");
+    }
 }
 
-const createWindow = () => {
-    const mainWindow = new BrowserWindow({
-        width: 1500,
-        height: 800,
-        frame: false,
-        minHeight: 200,
-        minWidth: 400,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            webviewTag: true
-        },
-        icon: __dirname + "/icon.ico"
-    });
-
-    mainWindow.loadFile(path.join(__dirname, 'index.html'));
-
-    ipc.on("ELECTRON_frame_minimize", (event, data) => {
-        mainWindow.minimize();
-    });
-
-    ipc.on("ELECTRON_frame_fullScreen", (event, data) => {
-        if (mainWindow.isMaximized()) {
-            mainWindow.restore();
-            return null;
-        }
-        mainWindow.maximize();
-        console.log(mainWindow.isMaximized());
-    });
-
-    ipc.on("ELECTRON_frame_close", (event, data) => {
-        mainWindow.close();
-    });
-
-    ipc.on("ELECTRON_contentLoad", (event, data) => {
-        fileSystem.readFile(__dirname + "\\html\\index.html", "utf8", (error, data) => {
-            event.reply("ELECTRON_contentLoaded", data);
-        });
-    });
-};
-app.on('ready', createWindow);
-
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
-});
-
-app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
-    } 
-});
+var main = new Main();
