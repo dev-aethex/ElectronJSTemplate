@@ -7,4 +7,63 @@
     display: flex;
     justify-content: space-between;
     padding: 0px 20px;
+    flex-direction: row;
+    align-items: center;
+    user-select: none;
+    -webkit-app-region: drag;
+    .title {
+        p {
+            padding: 0px;
+            margin: 0px;
+            font-size: 11px;
+        }
+    }
+
+    .buttons {
+        margin-left: -20px;
+        button {
+            border: none;
+            height: 30px;
+            padding: 0px 20px;
+            background: transparent;
+            color: @text;
+            opacity: 0.6;
+            transition-duration: 200ms;
+            -webkit-app-region: no-drag;
+            cursor: pointer;
+            font-size: 11px;
+            &:hover {
+                opacity: 1;
+                background: @layer1;
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    .controlButtons {
+        margin-right: -20px;
+        button {
+            border: none;
+            height: 30px;
+            background: transparent;
+            color: @text;
+            -webkit-app-region: no-drag;
+            opacity: 0.6; 
+            padding: 0px 20px;
+            cursor: pointer;
+            transition-duration: 200ms;
+            i {
+                font-size: 10px;
+            }
+            &:hover {
+                opacity: 1;
+                background: @layer1;
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
 }
