@@ -1,6 +1,13 @@
 <template>
     <div class="View">
-        <MenuBar ref="File" title="ElectronJS Template" />
+        <MenuBar ref="File" title="ElectronJS Template" :buttons="[
+            {
+                title: 'File'
+            },
+            {
+                title: 'Edit'
+            }
+        ]" />
     </div>
 </template>
 
