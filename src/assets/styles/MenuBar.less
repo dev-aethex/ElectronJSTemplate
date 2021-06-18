@@ -1,0 +1,79 @@
+@import "./_Config";
+
+.MenuBar {
+    width: 100vw;
+    height: 30px;
+    background: @layer0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    user-select: none;
+    -webkit-app-region: drag;
+
+    .ignoreDrag {
+        -webkit-app-region: no-drag;
+    }
+
+    .section {
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .left {
+        margin-left: -10px;
+        button {
+            padding: 0px 10px;
+            height: 30px;
+            min-width: 48px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: @text;
+            background: transparent;
+            cursor: pointer;
+            opacity: 0.6;
+            transition-duration: 200ms;
+            font-size: 10px;
+            &:hover {
+                opacity: 1;
+                background: @layer1;
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    .center {
+        span {
+            font-size: 10px;
+        }
+    }
+
+    .right {
+        margin-right: -20px;
+        button {
+            padding: 0px 10px;
+            border: none;
+            height: 30px;
+            background: transparent;
+            cursor: pointer;
+            transition-duration: 200ms;
+            min-width: 48px;
+            color: @text;
+            font-size: 10px;
+            opacity: 0.6;
+            &:hover {
+                opacity: 1;
+                background: @layer1;
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}
