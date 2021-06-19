@@ -40,5 +40,8 @@ app.on("ready", () => {
         })();
     } else {
         window.loadFile(path.join(__dirname, "../dist/index.html"));
+        ipcMain.on("Hi", (event, data) => {
+            console.log("HIIII");
+        });
     }
 });
