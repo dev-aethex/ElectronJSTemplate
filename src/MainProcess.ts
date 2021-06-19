@@ -1,9 +1,9 @@
-import { ipcRenderer } from "electron";
-
 export class MainProcess {
     production: boolean;
 
     socket: WebSocket|null;
+
+    mainProcessIpc: any;
     
     /**
      * Communicate between the ElectronJS main process via JSON
@@ -11,10 +11,14 @@ export class MainProcess {
     constructor() {
         // Initialize variables
         this.socket = null;
+        this.mainProcessIpc = null;
 
         // Check if VueJS is in production mode
         if (process.env.NODE_ENV == "production") {
             this.production = true;
+
+            // Add the IPC communicator
+            this.mainProcessIpc = require("./MainProcessIpc").mainProcessIpc;
             return;
         }
 
@@ -25,13 +29,15 @@ export class MainProcess {
 
     /**
      * 
-     * @param {JSON} response Response to send to the ElectronJS main process 
+     * @param { JSON } response Response to send to the ElectronJS main process 
      * @returns 
      */
-    send(response: JSON) {
+    public send(response: JSON) {
         if (this.production == true) {
-            ipcRenderer.send("");
-            return;
+
+            // Send a message with IPC to the main process
+            this.mainProcessIpc.send(response);
+            return; 
         }
 
         // Send message from development socket

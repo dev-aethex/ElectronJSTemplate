@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.e4cb1b42a8ed9b8a5bfb7768222eb9aa.js"
+  "precache-manifest.c9fd10af76d21479b17388d4481ae939.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "com.aethex.electronjs-template"});
